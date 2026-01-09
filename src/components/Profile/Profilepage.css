@@ -1,0 +1,125 @@
+/* Profilepage.css - WhatsApp style */
+
+.profilepage {
+  width: 350px;
+  background-color: #ffffff;
+  border-radius: 15px;
+ 
+  padding: 20px;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
+}
+
+.notprofilepage {
+  display: none;
+}
+
+/* Delete icon */
+.delete-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  color: #25d366;
+  font-size: 30px;
+  transition: transform 0.2s ease;
+}
+
+.delete-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Profile Image */
+.profileimage {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.profileimage img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #25d366;
+}
+
+/* Name & Status */
+.profilename {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.profilename h2 {
+  margin: 5px 0;
+  font-size: 24px;
+  color: #075e54;
+}
+
+.profilename p {
+  font-size: 14px;
+  color: #128c7e;
+}
+
+/* Bio */
+.profilebio {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Menu */
+.profile-menu {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.profile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-menu li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #333;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.profile-menu li:hover {
+  background-color: #e5f9ea;
+  color: #075e54;
+  border-radius: 8px;
+}
+
+.profile-menu .edit-icon {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #25d366;
+}
+
+/* ===================== TABLET ===================== */
+@media (min-width: 640px) and (max-width: 1024px)  {
+  .profilepage {
+    flex: 1;
+    max-width: none;
+    border-radius: 0;
+    height: 100%;
+  }
+}
+
+@media  (max-width: 640px) {
+   .profilepage {
+    flex: 1;
+    max-width: none;
+    border-radius: 0;
+    height: 100%;
+  }
+  
+}

@@ -1,0 +1,187 @@
+/* Sidebar container */
+.sidebar {
+  width: 320px;
+  height: 100vh;
+  background-color: #ffffff; /* light background */
+  color: #111827; /* dark text */
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e5e7eb;
+}
+
+/* Header */
+.sidebarheader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.sidebarheader h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.sidebarheader img {
+  width: 36px;
+  height: 36px;
+}
+
+/* Search bar */
+.searchbar {
+  display: flex;
+  align-items: center;
+  background-color: #f3f4f6; /* light gray background */
+  margin: 12px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.searchicon {
+  color: #6b7280; /* gray icon */
+  margin-right: 8px;
+}
+
+.searchbar input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #111827; /* dark text */
+  width: 100%;
+}
+
+/* Users list */
+.sidebarusers {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+/* User row */
+.sidebaruser {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sidebaruser:hover {
+  background-color: #f3f4f6;
+}
+
+/* Avatar */
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* User info */
+.sidebaruser-info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Name + online */
+.user-name-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow: hidden;
+}
+
+.username {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #111827; /* dark text */
+}
+
+/* Notification */
+.notification-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.notification {
+  min-width: 22px;
+  height: 22px;
+  background-color: #ef4444;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification[data-count="0"] {
+  display: none;
+}
+
+/* Footer */
+.sidebarfooter {
+  padding: 14px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.sidebarfooter button {
+  width: 100%;
+  background-color: #f3f4f6;
+  color: #111827;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.mobileSidebar{
+  flex:1
+}
+
+.tabsidebar{
+  flex:1
+
+}
+
+.sideArrow{
+  display: none;
+}
+
+.sideArrow {
+  display: none;
+  margin-right: 10px;
+}
+
+.mobilesidebarClass{
+  display: none;
+}
+
+.sidebarfullwidth{
+  width: 100%;
+}
+
+.display{
+ display:  none
+}
+
+@media screen and (max-width: 640px) {
+  .sideArrow {
+    display: block;
+  }
+  
+}
+

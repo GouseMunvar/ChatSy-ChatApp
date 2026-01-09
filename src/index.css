@@ -1,0 +1,36 @@
+
+/* WhatsApp Color Theme */
+
+body {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*{
+  box-sizing: border-box;
+  padding:0;
+  margin:0;
+}
+
+:root {
+  --wa-green: #25D366; /* Primary WhatsApp green */
+  --wa-dark-green: #075E54; /* Header / top bar */
+  --wa-light-gray: #ECE5DD; /* Background */
+  --wa-medium-gray: #999999; /* Secondary text */
+  --wa-dark-gray: #111B21; /* Main text */
+  --wa-white: #FFFFFF; /* White background */
+  --wa-chat-outgoing: #DCF8C6; /* Sent message bubble */
+  --wa-chat-incoming: #FFFFFF; /* Received message bubble */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --wa-green: #25D366;
+    --wa-dark-green: #005C4B;
+    --wa-light-gray: #202C33;
+    --wa-medium-gray: #8696A0;
+    --wa-dark-gray: #E9EDEF;
+    --wa-white: #121B22;
+    --wa-chat-outgoing: #005C4B;
+    --wa-chat-incoming: #202C33;
+  }
+}
