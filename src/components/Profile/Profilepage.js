@@ -14,7 +14,7 @@ const Profilepage = () => {
 
   const [selectedUser, setSelectedUser] = useState(null)
 
-  const { currentUser, Users, setUsers, isVisible, setIsVisible,deleteChat,showSidebar } = useAuth()
+  const { currentUser, Users, setUsers,showPopup,setShowPopup, isVisible, setIsVisible,deleteChat,showSidebar } = useAuth()
 
   
 
@@ -66,11 +66,11 @@ const Profilepage = () => {
         
         <div className="profile-menu">
           <ul>
-            <li>
+            <li onClick={()=>setShowPopup(!showPopup)}>
               <FaRegEdit className="edit-icon" /> Edit Profile
             </li>
-            <li>
-              <MdDeleteForever className="edit-icon"  onClick={()=>DeleteChat(selectedUser._id)}/> Delete Chat
+            <li  onClick={()=>DeleteChat(selectedUser._id)}>
+              <MdDeleteForever className="edit-icon" /> Delete Chat
             </li>
           </ul>
         </div>

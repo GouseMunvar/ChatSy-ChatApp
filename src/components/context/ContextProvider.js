@@ -16,6 +16,8 @@ const ContextProvider = ({ children }) => {
     const [isVisible, setIsVisible] = useState(false);
    const [unSeen,setUnseen]=useState({})
    const [showSidebar,setShowSidebar]=useState(true)
+   const [showPopup,setShowPopup]=useState(false)
+   const [userData,setUserData]=useState()
 
   // Signup function
   const Signup = async (email, fullName, password, bio = '', profilePic = '') => {
@@ -53,6 +55,8 @@ const ContextProvider = ({ children }) => {
     });
 
     const { token, user } = response.data;
+    setUserData(user)
+
     console.log(response.data, "login response");
     if (!token) throw new Error("Invalid login credentials");
 
@@ -104,6 +108,7 @@ const sendMessage = async (payload) => {
 
 
 const deleteChat = async (otherUserId) => {
+  alert("s")
   try {
     await axios.delete(
       `http://localhost:5000/api/messages/deleteChat/${otherUserId}`,
@@ -144,8 +149,21 @@ const deleteChat = async (otherUserId) => {
         console.error('Error fetching users:', error);
       }
     }
+
+    const updateProfile=async(payload)=>{
+      try{
+        const response=await axios.put('http://localhost:5000/api/auth/profile',payload,{
+           headers: { Authorization: `Bearer ${token}` }
+        })
+         return response.data;
+      }catch (error){
+         console.error('Error fetching users:', error);
+        
+       
+    }
+  }
   return (
-    <AuthContext.Provider value={{deleteChat,showSidebar,setShowSidebar,unSeen,setUnseen,isVisible,setIsVisible,Users,setUsers,onlineUsers,setOnlineUsers, token, setToken,UserText,setUserText, Login,getUsersForSideBar,getUserMessages,message,userId,setMessage,currentUser,setCurrentUser,sendMessage }}>
+    <AuthContext.Provider value={{deleteChat,updateProfile,showSidebar,setShowSidebar,showPopup,userData,setShowPopup,unSeen,setUnseen,isVisible,setIsVisible,Users,setUsers,onlineUsers,setOnlineUsers, token, setToken,UserText,setUserText, Login,getUsersForSideBar,getUserMessages,message,userId,setMessage,currentUser,setCurrentUser,sendMessage }}>
       {children}
     </AuthContext.Provider>
   );

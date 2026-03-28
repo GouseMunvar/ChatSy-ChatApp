@@ -1,0 +1,106 @@
+.popup {
+  position: fixed; /* better than absolute */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 90%;
+  max-width: 500px;
+
+  padding: 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  z-index: 1000;
+}
+
+/* Inputs */
+.popup input,
+.popup textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Button base */
+.popup button {
+  padding: 10px;
+  border: none;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Button container (SIDE BY SIDE) */
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Equal width buttons */
+.buttonContainer button {
+  flex: 1;
+}
+
+/* Update button (green) */
+.buttonContainer button:first-child {
+  background-color: #25d366;
+  color: white;
+}
+
+/* Cancel button (red) */
+.buttonContainer button:last-child {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* Hover effect */
+.buttonContainer button:hover {
+  opacity: 0.9;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .popup {
+    padding: 15px;
+  }
+
+  .popup input,
+  .popup textarea {
+    font-size: 0.95rem;
+    padding: 8px;
+  }
+
+  .popup button {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .popup {
+    width: 95%;
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+  .popup input,
+  .popup textarea {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .popup button {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}

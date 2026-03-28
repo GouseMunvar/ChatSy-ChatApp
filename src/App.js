@@ -10,8 +10,11 @@ import { socket } from './utils/server';
 import { useContext } from 'react';
 import React, { useEffect } from 'react'
 import { useAuth } from './components/context/ContextProvider';
+import Popup from './components/Popup/Popup';
 
 const  Layout = () => {
+   const { currentUser, Users, setUsers,showPopup,setShowPopup, isVisible, setIsVisible,deleteChat,showSidebar } = useAuth()
+  
   const token = localStorage.getItem('token');
   const {onlineUsers,setOnlineUsers}=useAuth()
  
@@ -44,10 +47,11 @@ useEffect(() => {
 }, [token, setOnlineUsers]);
 
   return (
-    <div style={{width: "100%", display: "flex"}}>
+    <div style={{width: "100%", position:"relative", display: "flex"}}>
       <Sidebar/>
       <ChatContainer/>
       <Profilepage/>
+      {showPopup && <Popup />}
     </div>
   )
 }
@@ -64,6 +68,7 @@ function App() {
         <Route path='/home' element={<Layout/>}/>
       </Routes>
     </div>
+  
     </Router>
   );
 }
